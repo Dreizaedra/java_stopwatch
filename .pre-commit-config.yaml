@@ -1,0 +1,26 @@
+repos:
+  -   repo: https://github.com/commitizen-tools/commitizen
+      rev: v4.8.3
+      hooks:
+        -   id: commitizen
+            name: Check commitizen
+            stages: [commit-msg]
+
+  -   repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v5.0.0
+      hooks:
+        -   id: check-yaml
+            name: Check YAML
+            stages: [pre-commit, pre-push]
+        -   id: end-of-file-fixer
+            name: Fix end of files
+            stages: [pre-commit, pre-push]
+        -   id: trailing-whitespace
+            name: Trim trailing whitespace
+            stages: [pre-commit, pre-push]
+        -   id: requirements-txt-fixer
+            name: Fix requirements.txt
+            stages: [pre-commit, pre-push]
+        -   id: check-added-large-files
+            name: Check for added large files
+            stages: [pre-commit, pre-push]
